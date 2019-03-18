@@ -1,0 +1,24 @@
+<h1>Update Employee</h1>
+<hr>
+<br>
+Enter Emp Id:<input type="text" #in1>
+<button type="button" (click)="getUser(in1.value)">Update user</button>
+<div *ngIf="display">
+  <form class="container" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+    Enter Id:<input type="text"  name="id" placeholder="Enter Id" [(ngModel)]="register.id" formControlName="id"><br>
+    Enter Name:<input type="text"  name="firstname" placeholder="Enter Name" [(ngModel)]="register.name" formControlName="name"><br>
+    Enter Age :<input type="text"  name="firstname" placeholder="age" [(ngModel)]="register.age" formControlName="age"><br>
+    Enter Date Of Birth:<input type="date"  name="firstname" placeholder="dd/mm/yyyy" [(ngModel)]="register.dob" formControlName="dob"><br>
+    Enter password:<input type="password" name="lastname" placeholder="password" formControlName="pass"><br>
+    Enter Confirm password:<input type="password" name="lastname" placeholder="condirm password" formControlName="cpass"><br>
+    Enter Email Id:<input type="email" name="email" placeholder="email" [(ngModel)]="register.email" formControlName="email"><br>
+    Users:<select (change)="selectChangeHandler($event)">
+            <option disabled>Choose</option>
+            <option value="admin">Admin</option>
+          <option value="users">Employee</option>
+          <option value="manager">Managers</option>
+        </select><br>
+    <input type="submit" value="SUBMIT" [disabled]="!form.valid">
+    <br><br>
+   </form>
+</div>

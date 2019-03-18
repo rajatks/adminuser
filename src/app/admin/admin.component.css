@@ -1,0 +1,161 @@
+
+@import url('https://fonts.googleapis.com/css?family=Oswald');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,400i,500i,600,600i,700,700i');
+
+body{
+    margin: 0;
+    height : 1050px;
+    background-repeat: no-repeat;                       
+    background-size: cover;     
+}
+
+header {
+   background-color: black;
+   color: white;
+   width: auto;
+   padding:6px 0px 6px 30px;  
+    height: 40px;
+   position: relative;
+   top: 0;
+   left: 0;
+   right: 0;
+}
+
+header h1{
+    display: inline;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 400;
+    font-size: 32px;
+    
+    margin: 0px 80px 0 20px;
+}
+
+.nav1{
+    display: flex;
+    float: left;
+    list-style-type: none;
+    font-family: 'Montserrat', sans-serif; 
+}
+
+.nav1 li{
+    list-style-type: none;
+    color: white;
+    margin: 0px 90px 0 34px;
+    padding: 0;
+}
+
+.nav1 li a{
+    text-decoration: none;
+    color: white;
+}
+
+.nav2{
+    display: flex;
+    float: right;
+    font-family: 'Montserrat', sans-serif; 
+}
+
+.nav2 li{
+    list-style-type: none;
+    margin: 0 50px 0 0;
+    color: white;
+}
+
+.nav2 li a{
+    text-decoration: none;
+    color: white;
+}
+
+/** --------------- Dropdown in Navigation ----------------------*/
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  transition:  all  ease-in;
+  
+  
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  margin: 12px 0 0 0;
+}
+
+.alink {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  color : black;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.homeblack:hover{
+    background-color: white;
+    -webkit-text-fill-color: black;
+    padding: 21px 10px 11px 10px;
+    transition: all  ease-in;
+}
+
+.divider{
+    background-color: white;
+    height: 1px;
+    position: relative;
+   left: 0;
+   right: 0;
+}
+
+/*------------------------------------------------------------------------------------*/
+
+.first{
+    width: 100%;
+    height: 130px; /*Changed for pc from 700*/      
+    background-image: url();
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.inside-main{
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%,-50%);
+    color: white;
+}
+
+.inside-main p{
+    font-size: 42px;    
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    background-color: rgba(0,0,0,0.4);
+    padding: 10px;
+    margin-bottom: 5px;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.inside-main p:nth-child(2) {
+    font-size: 62px;    
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    background-color: rgba(0,0,0,0.4);
+    padding: 10px;
+    position: absolute;
+    background-attachment: fixed;
+    margin-top: 0;
+}
+
+/*-----------------------------------------Second Page----------------------------------------------------------------*/
+
+.second{
+    height: 760px;
+    width: 100%;
+}

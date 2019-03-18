@@ -1,0 +1,11 @@
+<h1>Display</h1>
+<hr>
+<br>
+<div *ngFor="let e of emp">
+    <div *ngFor="let col of index">
+<li>
+  {{col}} : {{e[col]}}
+</li>
+</div>
+<hr>
+</div>

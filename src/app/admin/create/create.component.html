@@ -1,0 +1,20 @@
+<h1>This Is Register Page </h1>
+<div>
+<form class="container" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+    Enter Id:<input type="text"  name="id" placeholder="Enter Id" formControlName="id"><br>
+    Enter Name:<input type="text"  name="firstname" placeholder="Enter Name" formControlName="name"><br>
+    Enter Age :<input type="text"  name="firstname" placeholder="age" formControlName="age"><br>
+    Enter Date Of Birth:<input type="date"  name="firstname" placeholder="dd/mm/yyyy" formControlName="dob"><br>
+    Enter password:<input type="password" name="lastname" placeholder="password" formControlName="pass"><br>
+    Enter Confirm password:<input type="password" name="lastname" placeholder="condirm password" formControlName="cpass"><br>
+    Enter Email Id:<input type="email" name="email" placeholder="email" formControlName="email"><br>
+    Users:<select (change)="selectChangeHandler($event)">
+            <option disabled>Choose</option>
+            <option value="admin">Admin</option>
+          <option value="users">Employee</option>
+          <option value="manager">Managers</option>
+        </select><br>
+    <input type="submit" value="SUBMIT" [disabled]="!form.valid">
+    <br><br>
+   </form>
+</div>

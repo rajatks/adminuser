@@ -1,0 +1,49 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "aksss",
+      "age": 1,
+      "dob": "2019-03-11",
+      "pass": "12",
+      "cpass": "12",
+      "email": "aawww@gmail.com"
+    },
+    {
+      "id": "admin",
+      "name": "rajat",
+      "age": "22",
+      "dob": "2020-02-01",
+      "pass": "admin",
+      "cpass": "admin",
+      "email": "rajat@gmail.com"
+    },
+    {
+      "id": "2",
+      "name": "kunal",
+      "age": "23",
+      "dob": "2019-03-11",
+      "pass": "1234",
+      "cpass": "1234",
+      "email": "rajat@gmail.com"
+    },
+    {
+      "id": "5",
+      "name": "manish",
+      "age": "22",
+      "dob": "0002-02-22",
+      "pass": "1234",
+      "cpass": "1234",
+      "email": "rajat@gmail.com"
+    },
+    {
+      "id": "7",
+      "name": "rajat",
+      "age": "11",
+      "dob": "0011-11-01",
+      "pass": "12345",
+      "cpass": "12345",
+      "email": "rajat@gmail.com"
+    }
+  ]
+}
