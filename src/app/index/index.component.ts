@@ -18,11 +18,11 @@ export class IndexComponent implements OnInit {
   errorMsg:string="";
  us:string="admin";
  ps:string="admin";
-  register:Register={"id":1,"name":"", "age":1,"dob":"","pass":"","cpass":"","email":""};
+  register:Register={"id":1,"name":"", "age":1,"desig":"","dob":"","pass":"","cpass":"","email":"","salary":1};
   registers:Register[]=[];
   selectedOption:string="";
  
-  constructor(private route:Router,private restservice:RestService,private lc:LogincheckService) { }
+  constructor(public lc:LogincheckService,private route:Router,private restservice:RestService,) { }
   
   selectChangeHandler(event:any){
     this.selectedOption=event.target.value;
@@ -47,12 +47,15 @@ export class IndexComponent implements OnInit {
     .subscribe(
       (response)=>{
         this.register=response.json()
-        if(myform.userid==this.register.id && myform.pass1==this.register.pass && this.selectedOption==="users"){
+        if(myform.userid==this.register.id && myform.pass1==this.register.pass && this.selectedOption=="users"){
           this.disp1=!this.disp1;
           this.disp2=!this.disp2;
           console.log('successfully');
-            this.lc.setlogin(true);
-          this.route.navigate([''])
+          this.lc.setlogin(true);
+            this.restservice.setid(myform.userid);
+            console.log(myform.userid);
+            console.log(this.restservice.getid());
+          this.route.navigate(['/user'])
 
         }
         if(myform.userid==this.us && myform.pass1==this.ps && this.selectedOption=="admin"){
@@ -60,14 +63,19 @@ export class IndexComponent implements OnInit {
           this.disp2=!this.disp2;
           console.log('successfully');
             this.lc.setlogin(true);
+            this.restservice.setid(myform.userid);
           this.route.navigate(['admin'])
         }
         if(myform.userid==this.register.id && myform.pass1==this.register.pass && this.selectedOption=="manager"){
           this.disp1=!this.disp1;
           this.disp2=!this.disp2;
-          console.log('successfully');
+          console.log('successfully manager');
             this.lc.setlogin(true);
-          this.route.navigate([''])
+            this.restservice.setid(myform.userid);
+          this.route.navigate(['manager'])
+        }
+        else{
+          this.errorMsg="Record Is Not Fount please Fill Correct User Id and Password";
         }
       }
     )

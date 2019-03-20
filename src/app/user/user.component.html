@@ -1,0 +1,24 @@
+<body background="./assets/img/banking.jpg">
+<div class = "first">
+<h1>Welcome To User Page </h1>
+<h1>If U want To Know Your Details Then Click Below</h1>
+</div>
+<button type="button" class="button"  (click)="toggle()">Know Details</button>
+
+<div *ngIf="display">
+<form class="container" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+    Id:<input type="text"  name="id" placeholder="Enter Id" [(ngModel)]="register.id" formControlName="id"><br>
+     Name:<input type="text"  name="firstname" placeholder="Enter Name" [(ngModel)]="register.name" formControlName="name"><br>
+     Age :<input type="text"  name="firstname" placeholder="age" [(ngModel)]="register.age" formControlName="age"><br>
+     Designsation :<input type="text"  name="firstname" placeholder="Designsation" [(ngModel)]="register.desig" formControlName="desig"><br>
+     Date Of Birth:<input type="date"  name="firstname" placeholder="dd/mm/yyyy" [(ngModel)]="register.dob" formControlName="dob"><br>
+     password:<input type="password" name="lastname" placeholder="password" formControlName="pass"><br>
+     Confirm password:<input type="password" name="lastname" placeholder="condirm password" formControlName="cpass"><br>
+     Email Id:<input type="email" name="email" placeholder="email" [(ngModel)]="register.email" formControlName="email"><br>
+     Salary :<input type="text"  name="firstname" placeholder="age" [(ngModel)]="register.salary" formControlName="salary"><br>
+   
+    <input type="submit" value="Back" [disabled]="!form.valid">
+    <br><br>
+   </form>
+</div>
+</body>

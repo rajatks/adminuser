@@ -21,4 +21,8 @@ deleteUser(id)
     (error)=>console.log('error'),
   )
 }
+toggle()
+{
+  this.route.navigate(['admin'])
+}
 }

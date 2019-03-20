@@ -10,6 +10,16 @@ import { Register } from './register/register';
 })
 export class RestService {
 
+  id = 1;
+  getid()
+  {
+    return this.id;
+  }
+  setid(i)
+  {
+    this.id=i;
+  }
+
   url:string="http://localhost:3000/users/";
   constructor(private http:Http) { }
   postuser(register:Register)

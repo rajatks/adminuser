@@ -1,24 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { RestService } from 'src/app/rest.service';
+import { RestService } from '../rest.service';
 import { Router } from '@angular/router';
-import { getDefaultService } from 'selenium-webdriver/chrome';
-import { Register } from 'src/app/register/register';
+import { Register } from '../register/register';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-update',
-  templateUrl: './update.component.html',
-  styleUrls: ['./update.component.css']
+  selector: 'user',
+  templateUrl: './user.component.html',
+  styleUrls: ['./user.component.css']
 })
-export class UpdateComponent implements OnInit {
+export class UserComponent implements OnInit {
+
   display:boolean=false;
   register:Register={"id":1,"name":"", "age":1,"desig":"","dob":"","pass":"","cpass":"","email":"","salary":1};
   registers:Register[]=[];
   form;
   constructor(private restservice:RestService,private route:Router) { }
+
   
   ngOnInit() {
-  
     this.form=new FormGroup(
       {
         id : new FormControl("",Validators.compose([
@@ -42,22 +42,6 @@ export class UpdateComponent implements OnInit {
       }
     );
   }
-  onSubmit(myform)
-  {
-    
-    let register1=new Register(myform.id,myform.name,myform.age,myform.desig,myform.dob,myform.pass,myform.cpass,myform.email,myform.salary)
-    this.restservice.putuser(
-      register1,myform.id)
-    .subscribe
-    (
-      (response:any)=>
-      {console.log('updated susscessful');
-      this.route.navigate(['/admin'])
-    }
-    )
-  }
-  
-  
   textvalitator(control)
   {
     if(control.value.length>2)
@@ -65,21 +49,28 @@ export class UpdateComponent implements OnInit {
       return {'lastname':false}
     }
   }
-  getUser(id1)
+
+  toggle()
   {
-    this.restservice.getUser(id1)
+    console.log(this.restservice.getid());
+    this.restservice.getUser(this.restservice.getid())
+    .subscribe((response:any)=>this.register=response.json())
+    console.log(this.register);
+    this.display=!this.display;
+  }
+  onSubmit(myform)
+  {
+    
+    let register1=new Register(myform.id,myform.name,myform.age,myform.desig,myform.dob,myform.pass,myform.cpass,myform.email,myform.salary)
+    this.restservice.putuser(register1,myform.id)
     .subscribe
     (
       (response:any)=>
-      {
-        this.register=response.json();
-        this.display=true;
-      }
+      {console.log('Show susscessful');
+      this.route.navigate([''])
+    }
     )
+  }
+  
 
-  }
-  toggle()
-  {
-    this.route.navigate(['admin'])
-  }
 }

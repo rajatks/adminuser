@@ -34,6 +34,7 @@ input[type=text], select {
   
   div {
     width: 50%;
+    height:900px;
     background-color: #f2f2f2;
     padding: 50px;
     margin-left: 22%;

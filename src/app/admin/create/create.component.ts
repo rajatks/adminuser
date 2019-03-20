@@ -11,9 +11,10 @@ import { Router } from '@angular/router';
 })
 export class CreateComponent implements OnInit {
 
-  register:Register={"id":1,"name":"", "age":1,"dob":"","pass":"","cpass":"","email":""};
+  register:Register={"id":1,"name":"","age":1,"desig":"","dob":"","pass":"","cpass":"","email":"","salary":1};
   registers:Register[]=[];
   errorMsg:string="";
+  selectedOption:string="";
   form;
   constructor(private restservice:RestService,private route:Router) { }
   
@@ -36,14 +37,20 @@ export class CreateComponent implements OnInit {
         dob :new FormControl("",),
         pass:new FormControl("",),
         cpass :new FormControl("",),
-        email:new FormControl("",)
+        email:new FormControl("",),
+        salary:new FormControl("",)
       }
     );
   }
+  selectChangeHandler(event:any){
+    this.selectedOption=event.target.value;
+     
+  }
+
   onSubmit(myform)
   {
     
-    let register1=new Register(myform.id,myform.name,myform.age,myform.dob,myform.pass,myform.cpass,myform.email)
+    let register1=new Register(myform.id,myform.name,myform.age,this.selectedOption,myform.dob,myform.pass,myform.cpass,myform.email,myform.salary)
     this.restservice.postuser(register1)
     .subscribe
     (

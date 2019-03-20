@@ -6,6 +6,8 @@ import { CreateComponent } from './admin/create/create.component';
 import { DisplayComponent } from './admin/display/display.component';
 import { UpdateComponent } from './admin/update/update.component';
 import { DeleteComponent } from './admin/delete/delete.component';
+import { UserComponent } from './user/user.component';
+import { ManagerComponent } from './manager/manager.component';
 
 const routes: Routes = [
   {
@@ -31,8 +33,15 @@ const routes: Routes = [
   {
     path:'admin/delete',
     component:DeleteComponent
+  },
+  {
+    path:'user',
+    component:UserComponent
+  },
+  {
+    path:'manager',
+    component:ManagerComponent
   }
-
 ];
 
 @NgModule({

@@ -1,15 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "aksss",
-      "age": 1,
-      "dob": "2019-03-11",
-      "pass": "12",
-      "cpass": "12",
-      "email": "aawww@gmail.com"
-    },
-    {
       "id": "admin",
       "name": "rajat",
       "age": "22",
@@ -19,31 +10,26 @@
       "email": "rajat@gmail.com"
     },
     {
-      "id": "2",
-      "name": "kunal",
-      "age": "23",
-      "dob": "2019-03-11",
-      "pass": "1234",
-      "cpass": "1234",
-      "email": "rajat@gmail.com"
-    },
-    {
-      "id": "5",
-      "name": "manish",
-      "age": "22",
-      "dob": "0002-02-22",
-      "pass": "1234",
-      "cpass": "1234",
-      "email": "rajat@gmail.com"
-    },
-    {
-      "id": "7",
+      "id": "4",
       "name": "rajat",
-      "age": "11",
-      "dob": "0011-11-01",
-      "pass": "12345",
-      "cpass": "12345",
-      "email": "rajat@gmail.com"
+      "age": "22",
+      "desig": "users",
+      "dob": "2019-03-01",
+      "pass": "123",
+      "cpass": "123",
+      "email": "rajat@gmail.com",
+      "salary": 40000
+    },
+    {
+      "id": "1",
+      "name": "rajat",
+      "age": "22",
+      "desig": "manager",
+      "dob": "2019-03-07",
+      "pass": "123",
+      "cpass": "123",
+      "email": "rajat@gmail.com",
+      "salary": "80000"
     }
   ]
 }

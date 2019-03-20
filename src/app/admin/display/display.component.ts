@@ -10,13 +10,18 @@ import { Router } from '@angular/router';
 export class DisplayComponent implements OnInit {
 
   constructor(private restservice:RestService,private route:Router) { }
+  as:boolean;
  emp=[];
- index=["id","name", "age","dob","pass","cpass","email"];
+ index=["id","name", "age","desig","dob","pass","cpass","email","salary"];
   ngOnInit() {
     this.restservice.getallUser()
     .subscribe(
       (response:any)=>this.emp=response
     )
+  }
+  toggle()
+  {
+    this.route.navigate(['/admin'])
   }
 
 
